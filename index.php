@@ -71,8 +71,8 @@
         }
       }
 	  
-	  function getDetails(place_id){
-		service.getDetails({placeId: place_id}, function(place, status) {
+	  function getDetails(place){
+		service.getDetails({ reference: place.reference }, function(place, status) {
 			if (status === google.maps.places.PlacesServiceStatus.OK) {
 				console.log(place);
 			}
@@ -90,7 +90,7 @@
 			//place.formatted_address
 			//place.icon
 			//place.photos[0].getUrl();
-			getDetails(place.id);
+			getDetails(place);
           infowindow.setContent(place.name);
           infowindow.open(map, this);
         });
