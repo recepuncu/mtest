@@ -24,7 +24,6 @@
       version    : 'v2.6'
     });
 
-    // ADD ADDITIONAL FACEBOOK CODE HERE
   };
 
   (function(d, s, id){
@@ -37,10 +36,7 @@
 </script>	
 	
     <script>
-      // This example requires the Places library. Include the libraries=places
-      // parameter when you first load the API. For example:
-      // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
-
+      
       var map;
       var infowindow;
 
@@ -54,15 +50,10 @@
 
         infowindow = new google.maps.InfoWindow();
         var service = new google.maps.places.PlacesService(map);
-        /*service.nearbySearch({
-          location: pyrmont,
-          radius: 500,
-          type: ['store']
-        }, callback);*/
         service.textSearch({
           location: pyrmont,
           radius: 500,
-          query: 'a101'
+          query: 'Gediz Elektrik'
         }, callback);		
       }
 
