@@ -14,7 +14,8 @@
         height: 100%;
       }
     </style>
-	
+  </head>
+  <body>
 <script>
   window.fbAsyncInit = function() {
     FB.init({
@@ -86,9 +87,9 @@
         });
       }
     </script>
-  </head>
-  <body>
+	
     <div id="map"></div>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBLa4qA1ELbFMs2GN7FzAzdpT2QdPG38ds&libraries=places&callback=initMap" async defer></script>
+	
   </body>
 </html>
