@@ -23,7 +23,6 @@
       xfbml      : true,
       version    : 'v2.6'
     });
-
   };
 
   (function(d, s, id){
@@ -50,6 +49,11 @@
 
         infowindow = new google.maps.InfoWindow();
         var service = new google.maps.places.PlacesService(map);
+        /*service.nearbySearch({
+          location: pyrmont,
+          radius: 500,
+          type: ['store']
+        }, callback);*/
         service.textSearch({
           location: pyrmont,
           radius: 500,
@@ -64,6 +68,14 @@
           }
         }
       }
+	  
+	  function getDetails(place_id){
+		service.getDetails({placeId: place_id}, function(place, status) {
+			if (status === google.maps.places.PlacesServiceStatus.OK) {
+				console.log(place);
+			}
+		});	  
+	  }
 
       function createMarker(place) {
         var placeLoc = place.geometry.location;
@@ -73,8 +85,10 @@
         });
 
         google.maps.event.addListener(marker, 'click', function() {
-        	console.log(place);
-        	console.log(place.formatted_phone_number);
+			//place.formatted_address
+			//place.icon
+			//place.photos[0].getUrl();
+			getDetails(place.id);
           infowindow.setContent(place.name);
           infowindow.open(map, this);
         });
