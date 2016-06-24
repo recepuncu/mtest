@@ -74,6 +74,7 @@
 
         google.maps.event.addListener(marker, 'click', function() {
         	console.log(place);
+        	console.log(place.formatted_phone_number);
           infowindow.setContent(place.name);
           infowindow.open(map, this);
         });
