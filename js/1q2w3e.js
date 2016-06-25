@@ -18,7 +18,7 @@ function im() {
 		placesService.textSearch({
 			location: aWxrX2tvbnVt,
 			radius: 500,
-			query: 'Gediz Elektrik'
+			query: window.atob('R2VkaXogRWxla3RyaWs=')
 		}, placesServiceCallback);		
 	});	
 }//im
