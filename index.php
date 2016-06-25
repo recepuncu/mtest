@@ -22,7 +22,7 @@ html, body {
 <div id="harita"></div>
 
 <script type="text/javascript">
-/*window.fbAsyncInit = function() {
+window.fbAsyncInit = function() {
 	FB.init({
 		appId      : '1044549635583804',
 		xfbml      : true,
@@ -35,7 +35,7 @@ html, body {
 	js = d.createElement(s); js.id = id;
 	js.src = "//connect.facebook.net/en_US/sdk.js";
 	fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));*/
+}(document, 'script', 'facebook-jssdk'));
 	
 var harita;
 var ilk_konum;
@@ -72,11 +72,11 @@ function placesServiceCallback(results, status) {
 
 function getPlacesDetails(place, marker){
 	placesService.getDetails({ reference: place.reference }, function(place, status) {
-		if (status === google.maps.places.PlacesServiceStatus.OK) {
+		if (status === google.maps.places.PlacesServiceStatus.OK) {			
 			infowindow.setContent(
 				place.name +'<br/>'+ 
 				place.formatted_address +'<br/>'+ 
-				place.formatted_phone_number
+				(typeof place.formatted_phone_number)=='undefined' ? '' : place.formatted_phone_number
 			);
 			infowindow.open(harita, marker);				
 		}
