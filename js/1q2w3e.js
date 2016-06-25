@@ -3,7 +3,7 @@ var aWxrX2tvbnVt;
 var infowindow;
 var placesService;	
 
-function initMap() {
+function im() {
 	$(function(){
 		aWxrX2tvbnVt = {lat: 38.423734, lng: 27.142826};
 		
@@ -21,7 +21,7 @@ function initMap() {
 			query: 'Gediz Elektrik'
 		}, placesServiceCallback);		
 	});	
-}//initMap
+}//im
 
 function placesServiceCallback(results, status) {
 	if (status === google.maps.places.PlacesServiceStatus.OK) {
