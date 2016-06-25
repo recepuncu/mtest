@@ -1,11 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="description" content="Gediz Elektrik MİM">
-<meta name="keywords" content="Gediz Elektrik, MİM, harita, map">
-<meta name="author" content="Recep Uncu">
-<title>Gediz Elektrik MİM - Google Maps</title>
+<title></title>
 <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
 <style type="text/css">
 html, body {
@@ -13,7 +9,7 @@ html, body {
 	margin: 0;
 	padding: 0;
 }
-#harita {
+#aGFyaXRh {
 	height: 100%;
 }
 </style>
@@ -22,7 +18,7 @@ html, body {
 
 <body>
 
-<div id="harita"></div>
+<div id="aGFyaXRh"></div>
 
 <script type="text/javascript">
 window.fbAsyncInit = function() {

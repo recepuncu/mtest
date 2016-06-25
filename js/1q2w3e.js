@@ -1,22 +1,22 @@
-var harita;
-var ilk_konum;
+var aGFyaXRh;
+var aWxrX2tvbnVt;
 var infowindow;
 var placesService;	
 
 function initMap() {
 	$(function(){
-		ilk_konum = {lat: 38.423734, lng: 27.142826};
+		aWxrX2tvbnVt = {lat: 38.423734, lng: 27.142826};
 		
-		harita = new google.maps.Map($('#harita')[0], {
-			center: ilk_konum,
+		aGFyaXRh = new google.maps.Map($('#aGFyaXRh')[0], {
+			center: aWxrX2tvbnVt,
 			zoom: 13
 		});
 		
 		infowindow = new google.maps.InfoWindow();
-		placesService = new google.maps.places.PlacesService(harita);
+		placesService = new google.maps.places.PlacesService(aGFyaXRh);
 		
 		placesService.textSearch({
-			location: ilk_konum,
+			location: aWxrX2tvbnVt,
 			radius: 500,
 			query: 'Gediz Elektrik'
 		}, placesServiceCallback);		
@@ -42,7 +42,7 @@ function getPlacesDetails(place, marker){
 			if(typeof place.formatted_phone_number !== 'undefined')
 				_content += place.formatted_phone_number +'<br/>';												
 			infowindow.setContent(_content);
-			infowindow.open(harita, marker);				
+			infowindow.open(aGFyaXRh, marker);				
 		}
 	});	  
 }//getPlacesDetails
@@ -50,7 +50,7 @@ function getPlacesDetails(place, marker){
 function createPlaceMarker(place) {
 	var placeLoc = place.geometry.location;
 	var marker = new google.maps.Marker({
-		map: harita,
+		map: aGFyaXRh,
 		position: place.geometry.location,
 		title: place.name,
 		icon: 'https://mtes01.herokuapp.com/img/logo-gediz.png'
