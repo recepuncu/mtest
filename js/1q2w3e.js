@@ -53,7 +53,7 @@ function createPlaceMarker(place) {
 		map: aGFyaXRh,
 		position: place.geometry.location,
 		title: place.name,
-		icon: 'https://mtes01.herokuapp.com/img/logo-gediz.png'
+		icon: 'https://goo.gl/LOIJRc'
 	});
 	
 	google.maps.event.addListener(marker, 'click', function() {
