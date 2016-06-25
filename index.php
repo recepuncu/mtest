@@ -2,7 +2,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>GoogleMapsApi</title>
+<meta name="description" content="Gediz Elektrik MİM">
+<meta name="keywords" content="Gediz Elektrik, MİM, harita, map">
+<meta name="author" content="Recep Uncu">
+<title>Gediz Elektrik MİM - Google Maps</title>
 <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
 <style type="text/css">
 html, body {
@@ -36,72 +39,8 @@ window.fbAsyncInit = function() {
 	js.src = "//connect.facebook.net/en_US/sdk.js";
 	fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));
-	
-var harita;
-var ilk_konum;
-var infowindow;
-var placesService;	
-
-function initMap() {
-	$(function(){
-		ilk_konum = {lat: 38.423734, lng: 27.142826};
-		
-		harita = new google.maps.Map($('#harita')[0], {
-			center: ilk_konum,
-			zoom: 13
-		});
-		
-		infowindow = new google.maps.InfoWindow();
-		placesService = new google.maps.places.PlacesService(harita);
-		
-		placesService.textSearch({
-			location: ilk_konum,
-			radius: 500,
-			query: 'Gediz Elektrik'
-		}, placesServiceCallback);		
-	});	
-}//initMap
-
-function placesServiceCallback(results, status) {
-	if (status === google.maps.places.PlacesServiceStatus.OK) {
-		for (var i = 0; i < results.length; i++) {
-			createPlaceMarker(results[i]);
-		}
-	}
-}//placesServiceCallback
-
-function getPlacesDetails(place, marker){
-	placesService.getDetails({ reference: place.reference }, function(place, status) {
-		if (status === google.maps.places.PlacesServiceStatus.OK) {			
-			var _content = '';
-			if(typeof place.name !== 'undefined')
-				_content += place.name +'<br/>';
-			if(typeof place.formatted_address !== 'undefined')
-				_content += place.formatted_address +'<br/>';
-			if(typeof place.formatted_phone_number !== 'undefined')
-				_content += place.formatted_phone_number +'<br/>';												
-			infowindow.setContent(_content);
-			infowindow.open(harita, marker);				
-		}
-	});	  
-}//getPlacesDetails
-
-function createPlaceMarker(place) {
-	var placeLoc = place.geometry.location;
-	var marker = new google.maps.Marker({
-		map: harita,
-		position: place.geometry.location,
-		title: place.name,
-		icon: 'https://mtes01.herokuapp.com/img/logo-gediz.png'
-	});
-	
-	google.maps.event.addListener(marker, 'click', function() {
-		getPlacesDetails(place, this);
-	});
-}//createMarker
-
 </script>
-
+<script type="text/javascript" src="js/1q2w3e.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBLa4qA1ELbFMs2GN7FzAzdpT2QdPG38ds&libraries=places&callback=initMap" async defer></script>
 </body>
 </html>
