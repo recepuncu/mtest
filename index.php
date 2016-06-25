@@ -74,6 +74,8 @@ function getPlacesDetails(place, marker){
 	placesService.getDetails({ reference: place.reference }, function(place, status) {
 		if (status === google.maps.places.PlacesServiceStatus.OK) {			
 			var _content = '';
+			if(typeof place.name !== 'undefined')
+				_content += place.name +'<br/>';
 			if(typeof place.formatted_address !== 'undefined')
 				_content += place.formatted_address +'<br/>';
 			if(typeof place.formatted_phone_number !== 'undefined')
