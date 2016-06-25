@@ -70,12 +70,12 @@ function placesServiceCallback(results, status) {
 	}
 }//placesServiceCallback
 
-function getPlacesDetails(place){
+function getPlacesDetails(place, marker){
 	placesService.getDetails({ reference: place.reference }, function(place, status) {
 		if (status === google.maps.places.PlacesServiceStatus.OK) {
 			console.log(place);
 			infowindow.setContent(place.name);
-			infowindow.open(harita, this);				
+			infowindow.open(harita, marker);				
 		}
 	});	  
 }//getPlacesDetails
@@ -88,7 +88,7 @@ function createPlaceMarker(place) {
 	});
 	
 	google.maps.event.addListener(marker, 'click', function() {
-		getPlacesDetails(place);
+		getPlacesDetails(place, this);
 	});
 }//createMarker
 
