@@ -74,7 +74,11 @@ function getPlacesDetails(place, marker){
 	placesService.getDetails({ reference: place.reference }, function(place, status) {
 		if (status === google.maps.places.PlacesServiceStatus.OK) {
 			console.log(place);
-			infowindow.setContent(place.name);
+			infowindow.setContent(
+				place.name +'<br/>'+ 
+				place.formatted_address +'<br/>'+ 
+				place.formatted_phone_number
+			);
 			infowindow.open(harita, marker);				
 		}
 	});	  
