@@ -98,6 +98,13 @@ html, body {
 	margin: 0;
 	padding: 0;
 }
+#container {
+	width: 1070px;
+	height: 650px;
+	background-color: #FFC;
+	position: relative;
+	display: block;
+}
 #aGFyaXRh {
     width: 380px;
     height: 272px;
