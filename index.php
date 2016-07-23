@@ -69,10 +69,12 @@ Do the following if you're using your customized build of modernizr (http://www.
 <script>
   window.fbAsyncInit = function() {
     FB.init({
-      appId      : '1044549635583804',
+      appId      : '1652715035045481',
       xfbml      : true,
       version    : 'v2.7'
     });
+
+    // ADD ADDITIONAL FACEBOOK CODE HERE
   };
 
   (function(d, s, id){
