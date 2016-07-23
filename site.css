@@ -94,11 +94,12 @@ html, body {
 
 @media only screen and (min-width: 769px) {
 html, body {
+	height: 768px;
 	margin: 0;
 	padding: 0;
 }
 #aGFyaXRh {
-    width: 420px;
+    width: 380px;
     height: 272px;
     margin: -5px auto;
 }
@@ -108,7 +109,7 @@ html, body {
 	text-align: center;
 	height: 98px;
 	background-image: url(img/en-yakin-mim.png);
-	background-size: 50%;
+	background-size: 30%;
 	background-repeat: no-repeat;
 	background-position: center;
 	z-index: 2;
@@ -117,13 +118,13 @@ html, body {
 	text-align: center;
 	padding: 20px 0;
 	width: 100%;
-	height: 235px;
+	height: 205px;
 	background-image: url(img/destek.png);
-	background-size: 70%;
+	background-size: 30%;
 	background-repeat: no-repeat;
 	background-position: center;
 	position: absolute;
-	top: 30px;
+	top: 0;
 	z-index: 1;
 }
 #il-ilce-container {
@@ -131,12 +132,12 @@ html, body {
 	width: 100%;
 	height: 50px;
 	position: absolute;
-	top: 255px;
+	top: 180px;
 	z-index: 5;
 }
 #il-ilce-border {
 	border: 2px solid #ececec;
-	width: 95%;
+	width: 30%;
 	margin: 0 auto;
 }
 #harita {
@@ -145,11 +146,11 @@ html, body {
 	width: 100%;
 	height: 285px;
 	background-image: url(img/harita-cerceve.png);
-	background-size: 50% 100%;
+	background-size: 30% 100%;
 	background-repeat: no-repeat;
 	background-position: center;
 	position: absolute;
-	top: 335px;
+	top: 255px;
 	z-index: 4;
 }
 #aydem {
@@ -157,11 +158,11 @@ html, body {
 	width: 100%;
 	height: 74px;
 	background-image: url(img/aydem.png);
-	background-size: 75%;
+	background-size: 30%;
 	background-repeat: no-repeat;
 	background-position: center;
 	position: absolute;
-	top: 660px;
+	top: 560px;
 	z-index: 3;
 }
 .select {
