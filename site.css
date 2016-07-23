@@ -92,7 +92,7 @@ html, body {
 }
 }
 
-@media only screen and (min-width: 769px) {
+@media only screen and (min-width: 760px) {
 html, body {
 	height: 768px;
 	margin: 0;
