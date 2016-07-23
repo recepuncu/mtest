@@ -37,12 +37,6 @@ Do the following if you're using your customized build of modernizr (http://www.
 </head>
 
 <body>
-<div
-  class="fb-like"
-  data-share="true"
-  data-width="450"
-  data-show-faces="true">
-</div>
 <div id="container">
   <div id="en-yakin"></div>
   <div id="destek"></div>
