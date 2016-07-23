@@ -94,10 +94,8 @@ html, body {
 
 @media only screen and (min-width: 769px) {
 html, body {
-	height: 100%;
 	margin: 0;
 	padding: 0;
-	overflow: hidden;
 }
 #aGFyaXRh {
     width: 420px;
