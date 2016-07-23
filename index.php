@@ -1,7 +1,7 @@
 <?php
 if(isset($_GET['ref'])){
 	if($_GET['ref'] == 'mobile'){
-		echo '<script>top.location="http://mtes01.herokuapp.com/"</script>';
+		echo '<script>top.location="https://mtes01.herokuapp.com/"</script>';
 	}
 }
 ?>
