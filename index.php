@@ -65,23 +65,24 @@ Do the following if you're using your customized build of modernizr (http://www.
     <div id="harita"><div id="aGFyaXRh"></div></div>
   </div>
   <div id="aydem"></div>
-</div>
-<script type="text/javascript">
-window.fbAsyncInit = function() {
-	FB.init({
-		appId      : '1044549635583804',
-		xfbml      : true,
-		version    : 'v2.6'
-	});
-};	
-(function(d, s, id){
-	var js, fjs = d.getElementsByTagName(s)[0];
-	if (d.getElementById(id)) {return;}
-	js = d.createElement(s); js.id = id;
-	js.src = "//connect.facebook.net/en_US/sdk.js";
-	fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));
-</script> 
+</div> 
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '1044549635583804',
+      xfbml      : true,
+      version    : 'v2.7'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
 <script src="js/il_ilce.js"></script> 
 <script type="text/javascript" src="js/1q2w3e.min.js?v=134d308d0f29f38fd804e7882b2f7314"></script> 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBLa4qA1ELbFMs2GN7FzAzdpT2QdPG38ds&libraries=places&callback=ce67963a2365be285f341a1f9dea36ea" async defer></script>
