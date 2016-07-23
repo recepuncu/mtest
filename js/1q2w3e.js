@@ -7,21 +7,50 @@ function ce67963a2365be285f341a1f9dea36ea() { //initMap
 	$(function(){
 		aWxrX2tvbnVt = {lat: 38.423734, lng: 27.142826};
 		
-		aGFyaXRh = new google.maps.Map($('#aGFyaXRh')[0], {
-			center: aWxrX2tvbnVt,
-			zoom: 13
-		});
+		$('#ilce').on('change', function() {
+			var lat = $('option:selected', this).data('lat');
+			var lng = $('option:selected', this).data('lng');
+			aWxrX2tvbnVt = {lat: lat, lng: lng};
+			bG9hZE1hcA();
+		});		
 		
-		infowindow = new google.maps.InfoWindow();
-		placesService = new google.maps.places.PlacesService(aGFyaXRh);
+		if(navigator.geolocation) {
+			//https adresinden girilmediğinde konum alınmaz
+			//Only secure origins are allowed"
+			navigator.geolocation.getCurrentPosition(function(position) {				
+				aWxrX2tvbnVt = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
+				bG9hZE1hcA();
+			}, function() {
+				//handleNoGeolocation(browserSupportFlag);
+			},
+			{
+				enableHighAccuracy: false,
+				timeout: 30000,
+				maximumAge: 0
+			});
+		}		
+		bG9hZE1hcA();
 		
-		placesService.textSearch({
-			location: aWxrX2tvbnVt,
-			radius: 500,
-			query: window.atob('R2VkaXogRWxla3RyaWs=')
-		}, placesServiceCallback);		
 	});	
 }//ce67963a2365be285f341a1f9dea36ea
+
+function bG9hZE1hcA(){
+		$(function(){
+			aGFyaXRh = new google.maps.Map($('#aGFyaXRh')[0], {
+				center: aWxrX2tvbnVt,
+				zoom: 14
+			});
+
+			infowindow = new google.maps.InfoWindow();
+			placesService = new google.maps.places.PlacesService(aGFyaXRh);
+
+			placesService.textSearch({
+				location: aWxrX2tvbnVt,
+				radius: 500,
+				query: window.atob('R2VkaXogRWxla3RyaWs=')
+			}, placesServiceCallback);			
+		});
+} //loadMap
 
 function placesServiceCallback(results, status) {
 	if (status === google.maps.places.PlacesServiceStatus.OK) {
@@ -59,8 +88,8 @@ function createPlaceMarker(place) {
 	var marker = new google.maps.Marker({
 		map: aGFyaXRh,
 		position: place.geometry.location,
-		title: place.name,
-		icon: 'https://goo.gl/LOIJRc'
+		title: place.name
+		//,icon: 'https://goo.gl/LOIJRc'
 	});
 	
 	google.maps.event.addListener(marker, 'click', function() {
