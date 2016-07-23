@@ -54,8 +54,8 @@ Do the following if you're using your customized build of modernizr (http://www.
       </table>
     </div>
   </div>
-  <div id="harita">
-    <div id="aGFyaXRh"></div>
+  <div id="harita-container">
+    <div id="harita"><div id="aGFyaXRh"></div></div>
   </div>
   <div id="aydem"></div>
 </div>
