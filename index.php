@@ -11,7 +11,7 @@
 <meta name="theme-color" content="#e31d1a">
 <title>Size En Yakın MİM</title>
 <link href="boilerplate.css" rel="stylesheet" type="text/css">
-<link href="site.css?v=134d308d0f29f38fd804e7882b2f7314" rel="stylesheet" type="text/css">
+<link href="site.css?v=134d308d0f29f38fd804e7882b2f7315" rel="stylesheet" type="text/css">
 <!-- 
 To learn more about the conditional comments around the html tags at the top of the file:
 paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/
