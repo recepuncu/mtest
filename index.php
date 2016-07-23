@@ -1,10 +1,3 @@
-<?php
-if(isset($_GET['ref'])){
-	if($_GET['ref'] == 'mobile'){
-		echo '<script>top.location="http://mtes01.herokuapp.com/"</script>';
-	}
-}
-?>
 <!doctype html>
 <!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
 <!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
