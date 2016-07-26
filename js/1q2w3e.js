@@ -18,7 +18,10 @@ function ce67963a2365be285f341a1f9dea36ea() { //initMap
 				var lat = $('option:selected', this).data('lat');
 				var lng = $('option:selected', this).data('lng');
 				aWxrX2tvbnVt = {lat: lat, lng: lng};
-				bG9hZE1hcA();				
+				bG9hZE1hcA();
+				setTimeout(function(){
+					$('#bulunan-adresler').slideDown();
+				}, 1000);
 			}else{
 				$('#bulunan-adresler').hide();
 			}
@@ -77,8 +80,7 @@ function placesServiceCallback(results, status) {
 			createPlaceMarker(results[i]);			
 			if(i < 3)
 				$('ul','#bulunan-adresler').append('<li data-telefon="' + results[i].formatted_phone_number + '"><span>' + results[i].formatted_address + '</span></li>');			
-		}
-		$('#bulunan-adresler').slideDown();
+		}		
 	}
 }//placesServiceCallback
 
