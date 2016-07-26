@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+<meta charset="utf-8">
+<title>Marker</title>
+<style>
+html, body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+#map {
+	height: 100%;
+}
+</style>
+</head>
+<body>
+
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '1044549635583804',
+      xfbml      : true,
+      version    : 'v2.6'
+    });
+
+    // ADD ADDITIONAL FACEBOOK CODE HERE
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+
+<div id="map"></div>
+<script>
+function initMap() {
+
+	//önceden işaretlenmiş lokasyonlar
+	var locations = [
+	  ['Bondi Beach', 38.42061219237107, 27.179017066955566, 4],
+	  ['Coogee Beach', 38.42642871684965, 27.17996120452881, 5],
+	  ['Cronulla Beach', 38.42363818841559, 27.164125442504883, 3],
+	  ['Manly Beach', 38.42363818841559, 27.19043254852295, 2],
+	  ['Maroubra Beach', 38.41435806550936, 27.165756225585938, 1]
+	];
+
+	//harita varsayılan ayaları ile alınır.
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 13,
+      center: new google.maps.LatLng(38.423734, 27.142826),
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    });
+	
+	//herhangi bir marker ı belirgin hale getirmek
+	setTimeout(function(){ 
+		map.setCenter(new google.maps.LatLng( 38.42363818841559, 27.19043254852295 ) ); 
+		markersArray[3].setAnimation(google.maps.Animation.BOUNCE);
+		//markersArray[3].setAnimation(null);
+	}, 5000);
+
+	//değişkenlerimiz
+    var infowindow = new google.maps.InfoWindow();
+	var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
+    var marker, i;
+
+	//markerlar haritaya set edilir.
+	var markersArray = [];
+	for (i = 0; i < locations.length; i++) {  
+		marker = new google.maps.Marker({
+			position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+			map: map,
+			icon: iconBase + 'schools_maps.png'
+		});
+		//oluşturulan her bir markera click event verilir.		
+		google.maps.event.addListener(marker, 'click', (function(marker, i) {
+			return function() {
+				infowindow.setContent(locations[i][0]);
+				infowindow.open(map, marker);
+			}
+		})(marker, i));
+		markersArray.push(marker);
+	}
+
+	//harita üzerine tıklanınca yeni bir marker konulur.
+	google.maps.event.addListener(map, 'click', function(event) {
+		placeMarker(event.latLng);
+	});
+	function placeMarker(location) {
+		//marker ilk eklendiğindeki position
+		console.log(location.lat());
+		console.log(location.lng());
+		var marker = new google.maps.Marker({
+			draggable: true,
+			position: location, 
+			map: map
+		});
+		google.maps.event.addListener(marker, 'dragend', function() {
+			//marker hareket ettirilince position
+			console.log(marker.getPosition().lat());
+			console.log(marker.getPosition().lng());
+		});		
+		markersArray.push(marker);		
+	}	
+	
+} //initMap
+</script> 
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBLa4qA1ELbFMs2GN7FzAzdpT2QdPG38ds&callback=initMap"></script>
+
+</body>
+</html>

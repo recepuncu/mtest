@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_ilce" value="name:id;datatype:int,name:parent_id;datatype:int,name:label;datatype:string,name:lat;datatype:real,name:lng;datatype:real" />
+</info>
