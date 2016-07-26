@@ -6,7 +6,7 @@
 <meta name="theme-color" content="#e31d1a">
 <title>Size En Yakın MİM</title>
 <link href="boilerplate.css" rel="stylesheet" type="text/css">
-<link rel="stylesheet" type="text/css" href="site.min.css?v=134d308d0f29f38fd804e7882b2f7316"/>
+<link rel="stylesheet" type="text/css" href="site.min.css?v=8b5d6e7aca86c9e1f9617946e7478a89"/>
 <!--[if lt IE 9]>
 <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
@@ -93,7 +93,7 @@
    }(document, 'script', 'facebook-jssdk'));
 </script> 
 <script src="js/il_ilce.js"></script> 
-<script type="text/javascript" src="js/1q2w3e.min.js?v=134d308d0f29f38fd804e7882b2f7315"></script> 
+<script type="text/javascript" src="js/1q2w3e.min.js?v=8b5d6e7aca86c9e1f9617946e7478a89"></script> 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBLa4qA1ELbFMs2GN7FzAzdpT2QdPG38ds&libraries=places&callback=ce67963a2365be285f341a1f9dea36ea" async defer></script>
 
 

@@ -23,7 +23,15 @@ function ce67963a2365be285f341a1f9dea36ea() { //initMap
 			}else{
 				$('#bulunan-adresler').hide();
 			}
-		});		
+		});
+		
+		$(document).on('click', '#bulunan-adresler ul li', function(){
+			var adres = $('span', $(this)).html();
+			var telefon = 'Telefon Bulunamadı.';
+			if($(this).data('telefon') != 'undefined')
+				telefon = $(this).data('telefon');
+			showCustomInfo(adres, telefon);
+		});
 		
 		if(navigator.geolocation) {
 			//https adresinden girilmediğinde konum alınmaz
@@ -57,7 +65,7 @@ function bG9hZE1hcA(){
 
 			placesService.textSearch({
 				location: aWxrX2tvbnVt,
-				radius: 1,
+				radius: '500',
 				query: window.atob('R2VkaXogRWxla3RyaWs=')
 			}, placesServiceCallback);			
 		});
@@ -69,7 +77,7 @@ function placesServiceCallback(results, status) {
 		for (var i = 0; i < results.length; i++) {
 			createPlaceMarker(results[i]);			
 			if(i < 3)
-				$('ul','#bulunan-adresler').append('<li><span>' + results[i].formatted_address + '</span></li>');			
+				$('ul','#bulunan-adresler').append('<li data-telefon="' + results[i].formatted_phone_number + '"><span>' + results[i].formatted_address + '</span></li>');			
 		}
 	}
 }//placesServiceCallback
