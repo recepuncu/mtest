@@ -3,15 +3,26 @@ var aWxrX2tvbnVt; //varsayılan lokasyon long-lat
 var infowindow; //marker tıklandığında açılan
 var placesService; //google places servisi
 
+function showCustomInfo(adres, telefon){
+	$('#info-adres', '#detay-cerceve').html(adres);
+	$('#info-telefon', '#detay-cerceve').html(telefon);
+	$('#detay-cerceve').show();
+}
+
 function ce67963a2365be285f341a1f9dea36ea() { //initMap
 	$(function(){
 		aWxrX2tvbnVt = {lat: 38.423734, lng: 27.142826};
 		
 		$('#ilce').on('change', function() {
-			var lat = $('option:selected', this).data('lat');
-			var lng = $('option:selected', this).data('lng');
-			aWxrX2tvbnVt = {lat: lat, lng: lng};
-			bG9hZE1hcA();
+			if(this.value > 0){
+				var lat = $('option:selected', this).data('lat');
+				var lng = $('option:selected', this).data('lng');
+				aWxrX2tvbnVt = {lat: lat, lng: lng};
+				bG9hZE1hcA();
+				$('#bulunan-adresler').slideDown();
+			}else{
+				$('#bulunan-adresler').hide();
+			}
 		});		
 		
 		if(navigator.geolocation) {
@@ -38,7 +49,7 @@ function bG9hZE1hcA(){
 		$(function(){
 			aGFyaXRh = new google.maps.Map($('#aGFyaXRh')[0], {
 				center: aWxrX2tvbnVt,
-				zoom: 14
+				zoom: 12
 			});
 
 			infowindow = new google.maps.InfoWindow();
@@ -46,7 +57,7 @@ function bG9hZE1hcA(){
 
 			placesService.textSearch({
 				location: aWxrX2tvbnVt,
-				radius: 500,
+				radius: 1,
 				query: window.atob('R2VkaXogRWxla3RyaWs=')
 			}, placesServiceCallback);			
 		});
@@ -54,8 +65,11 @@ function bG9hZE1hcA(){
 
 function placesServiceCallback(results, status) {
 	if (status === google.maps.places.PlacesServiceStatus.OK) {
+		$('ul', '#bulunan-adresler').empty();
 		for (var i = 0; i < results.length; i++) {
-			createPlaceMarker(results[i]);
+			createPlaceMarker(results[i]);			
+			if(i < 3)
+				$('ul','#bulunan-adresler').append('<li><span>' + results[i].formatted_address + '</span></li>');			
 		}
 	}
 }//placesServiceCallback
@@ -63,14 +77,20 @@ function placesServiceCallback(results, status) {
 function getPlacesDetails(place, marker){
 	placesService.getDetails({ reference: place.reference }, function(place, status) {
 		if (status === google.maps.places.PlacesServiceStatus.OK) {			
-
+			
+			var adres = 'Adres Bulunamadı.';
+			var telefon = 'Telefon Bulunamadı.';
 			var _content = '';
 			if(typeof place.name !== 'undefined')
 				_content += place.name +'<br/>';
-			if(typeof place.formatted_address !== 'undefined')
+			if(typeof place.formatted_address !== 'undefined'){
 				_content += place.formatted_address +'<br/>';
-			if(typeof place.formatted_phone_number !== 'undefined')
+				adres = place.formatted_address;
+			}
+			if(typeof place.formatted_phone_number !== 'undefined'){
 				_content += place.formatted_phone_number +'<br/>';
+				telefon = place.formatted_phone_number;
+			}
 				
 			if('photos' in place){
 				var  photo_src = place.photos[0].getUrl({'maxWidth': 150, 'maxHeight': 100});
@@ -78,7 +98,8 @@ function getPlacesDetails(place, marker){
 			}
 										
 			infowindow.setContent(_content);
-			infowindow.open(aGFyaXRh, marker);				
+			//infowindow.open(aGFyaXRh, marker);
+			showCustomInfo(adres, telefon);			
 		}
 	});	  
 }//getPlacesDetails
