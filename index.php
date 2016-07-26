@@ -6,7 +6,7 @@
 <meta name="theme-color" content="#e31d1a">
 <title>Size En Yakın MİM</title>
 <link href="boilerplate.css" rel="stylesheet" type="text/css">
-<link rel="stylesheet" type="text/css" href="site.css?v=134d308d0f29f38fd804e7882b2f7315"/>
+<link rel="stylesheet" type="text/css" href="site.min.css?v=134d308d0f29f38fd804e7882b2f7316"/>
 <!--[if lt IE 9]>
 <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
