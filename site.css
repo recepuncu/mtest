@@ -70,6 +70,7 @@ html {
 }
 
 #detay-cerceve {
+	display: none;
 	position: relative;
 	height: 170px;
 	padding: 10px 15px 32px 15px;
