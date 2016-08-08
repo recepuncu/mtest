@@ -2,6 +2,15 @@ html {
 	padding: 7px;
 }
 
+.max-width-135 {
+ max-width: 135px;
+}
+
+#bulunan-adresler li:hover {
+    background-color: #f0f8ff;
+    cursor: pointer;
+}
+
 @media only screen and (min-width: 320px) {
 
 

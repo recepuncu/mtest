@@ -6,7 +6,7 @@
 <meta name="theme-color" content="#e31d1a">
 <title>Size En Yakın MİM</title>
 <link href="boilerplate.css" rel="stylesheet" type="text/css">
-<link rel="stylesheet" type="text/css" href="site.min.css?v=8b5d6e7aca86c9e1f9617946e7478a89"/>
+<link rel="stylesheet" type="text/css" href="site.min.css?v=8b5d6e7aca86c9e1f9617946e7478a90"/>
 <!--[if lt IE 9]>
 <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
@@ -27,7 +27,7 @@
     <table width="95%" border="0" cellspacing="0" cellpadding="3" class="m-10">
       <tr>
         <td><span class="lbl-il-ilce">İl</span></td>
-        <td width="50%"><select id="il" name="il" class="select">
+        <td width="50%"><select id="il" name="il" class="select max-width-135">
             <option value="-1">Seçiniz</option>
             <option value="35">İZMİR</option>
             <option value="45">MANİSA</option>
@@ -36,7 +36,7 @@
             <option value="48">MUĞLA</option>
           </select></td>
         <td><span class="lbl-il-ilce">İlçe</span></td>
-        <td width="50%"><select id="ilce" name="ilce" class="select" disabled>
+        <td width="50%"><select id="ilce" name="ilce" class="select max-width-135" disabled>
             <option value="-1">İl Seçiniz</option>
           </select></td>
       </tr>
@@ -93,7 +93,7 @@
    }(document, 'script', 'facebook-jssdk'));
 </script> 
 <script src="js/il_ilce.js"></script> 
-<script type="text/javascript" src="js/1q2w3e.min.js?v=8b5d6e7aca86c9e1f9617946e7478a89"></script> 
+<script type="text/javascript" src="js/1q2w3e.min.js?v=8b5d6e7aca86c9e1f9617946e7478a90"></script> 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBLa4qA1ELbFMs2GN7FzAzdpT2QdPG38ds&libraries=places&callback=ce67963a2365be285f341a1f9dea36ea" async defer></script>
 
 

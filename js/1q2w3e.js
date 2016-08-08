@@ -65,11 +65,18 @@ function bG9hZE1hcA(){
 
 			infowindow = new google.maps.InfoWindow();
 			placesService = new google.maps.places.PlacesService(aGFyaXRh);
+			
+			var search_words_index = $('#il option:selected').val();
+			var search_word = search_words[search_words_index];
+			if(($('#ilce option:selected').text() != 'İl Seçiniz')
+				&&($('#ilce option:selected').text() != 'Seçiniz')){
+				search_word += ' ' + $('#ilce option:selected').text();
+			}			
 
 			placesService.textSearch({
 				location: aWxrX2tvbnVt,
 				radius: '500',
-				query: window.atob('R2VkaXogRWxla3RyaWs=')
+				query: search_word
 			}, placesServiceCallback);			
 		});
 } //loadMap
@@ -116,13 +123,18 @@ function getPlacesDetails(place, marker){
 }//getPlacesDetails
 
 function createPlaceMarker(place) {
+
 	var placeLoc = place.geometry.location;
-	var marker = new google.maps.Marker({
-		map: aGFyaXRh,
-		position: place.geometry.location,
-		title: place.name
-		//,icon: 'https://goo.gl/LOIJRc'
-	});
+	
+	var markerOpts = {};
+	markerOpts.map = aGFyaXRh;
+	markerOpts.position = place.geometry.location;
+	markerOpts.title = place.name;
+	if(place.name.indexOf('Gediz') !== -1){
+		markerOpts.icon = 'https://goo.gl/LOIJRc';
+	}	
+	
+	var marker = new google.maps.Marker(markerOpts);
 	
 	google.maps.event.addListener(marker, 'click', function() {
 		getPlacesDetails(place, this);

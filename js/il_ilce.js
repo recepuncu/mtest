@@ -94,6 +94,14 @@ var ilce_liste = [
 	{id: 661, parent_id:48, label:'YATAĞAN', lat:37.34055560, lng:28.14027780}
 ];
 
+var search_words = [];
+search_words[-1] = 'MİM';
+search_words[35] = 'Gediz Elektrik MİM';
+search_words[45] = 'Gediz Elektrik MİM';
+search_words[9] =  'Aydem ';
+search_words[20] =  'Aydem ';
+search_words[48] =  'Aydem ';
+
 $(function(){	
 	$('#il').on('change', function() {
 		var il_id = $(this).val();
